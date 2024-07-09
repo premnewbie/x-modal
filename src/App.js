@@ -8,7 +8,7 @@ function App() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="modal">
+    <div className="App">
       <h1>User Details Modal</h1>
       <button onClick={handleOpen}>Open Form</button>
       <ModalForm open={open} handleClose={handleClose} />
