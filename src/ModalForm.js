@@ -15,7 +15,11 @@ const style = {
   p: 4,
 };
 
-export default function ModalForm({open,handleClose}) {  
+export default function ModalForm() {  
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const [username,setUsername] = useState('');
   const [phone,setPhone] = useState('');
   const [email,setEmail] = useState('');
@@ -45,7 +49,9 @@ export default function ModalForm({open,handleClose}) {
   return (  
     <div className="modal">
       <div className="modal-content">  
-        <Modal
+        <h1>User Details Modal</h1>
+        <button onClick={handleOpen}>Open Form</button>
+        {open && <Modal
           open={open}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
@@ -65,7 +71,7 @@ export default function ModalForm({open,handleClose}) {
               <button type='submit' className='submit-button'>Submit</button>
             </form>          
           </Box>
-        </Modal>
+        </Modal>}
       </div>
     </div>
   )
