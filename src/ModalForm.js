@@ -42,31 +42,29 @@ export default function ModalForm({open,handleClose}) {
     } 
   }
 
-  return (    
-    <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Box sx={style}>
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Fill Details</h2>
-            <form onSubmit={handleSubmit}>
-              <h3>Username:</h3>
-              <input type='text' id='username' value={username} required onInput={(e) => setUsername(e.target.value)}/>
-              <h3>Email Address:</h3>
-              <input type='email' id='email' value={email} required onInput={(e) => setEmail(e.target.value)}/>
-              <h3>Phone Number:</h3>
-              <input type='number' id='phone' value={phone} required onInput={(e) => setPhone(e.target.value)}/>
-              <h3>Date of Birth:</h3>
-              <input type='date' id='dob' value={dob} required  onInput={(e) => setDob(e.target.value)}/>
-              <button type='submit' className='submit-button'>Submit</button>
-            </form>
-          </div>
-        </div>
-      </Box>
-    </Modal>
+  return (  
+    <div className="modal-content">  
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>        
+          <h2>Fill Details</h2>
+          <form onSubmit={handleSubmit}>
+            <h3>Username:</h3>
+            <input type='text' id='username' value={username} required onInput={(e) => setUsername(e.target.value)}/>
+            <h3>Email Address:</h3>
+            <input type='email' id='email' value={email} required onInput={(e) => setEmail(e.target.value)}/>
+            <h3>Phone Number:</h3>
+            <input type='number' id='phone' value={phone} required onInput={(e) => setPhone(e.target.value)}/>
+            <h3>Date of Birth:</h3>
+            <input type='date' id='dob' value={dob} required  onInput={(e) => setDob(e.target.value)}/>
+            <button type='submit' className='submit-button'>Submit</button>
+          </form>          
+        </Box>
+      </Modal>
+    </div>
   )
 }
