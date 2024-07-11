@@ -50,7 +50,7 @@ export default function ModalForm() {
       <h1>User Details Modal</h1>
       <button onClick={handleOpen}>Open Form</button>
       {open && <div className="modal">
-        <div className="modal-content">  
+        <div className="modalBody">  
         <Modal
             open={open}
             onClose={handleClose}
