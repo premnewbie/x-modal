@@ -31,7 +31,9 @@ export default function ModalForm() {
     const emailFormat = /\S+@\S+\.\S+/;
     const phoneFormat = /^\d{10}$/;
 
-    if (!phoneFormat.test(phone)) {
+    if (!emailFormat.test(email)) {
+      alert("Invalid email. Please check your email address.");
+    } else if (!phoneFormat.test(phone)) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     } else if (dob!=='' && new Date(dob) > currentDate) {
       alert("Invalid date of birth. Please enter a valid date.");
