@@ -35,7 +35,7 @@ export default function ModalForm() {
       alert("Invalid email. Please check your email address.");
     } else if (!phoneFormat.test(phone)) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
-    } else if (dob!=='' && new Date(dob) > currentDate) {
+    } else if (new Date(dob) > currentDate || dob==='') {
       alert("Invalid date of birth. Please enter a valid date.");
     } else{
       setUsername('');
@@ -63,11 +63,11 @@ export default function ModalForm() {
                 <h3>Username:</h3>
                 <input type='text' id='username' value={username} onInput={(e) => setUsername(e.target.value)}/>
                 <h3>Email Address:</h3>
-                <input type='email' id='email' value={email} required onInput={(e) => setEmail(e.target.value)}/>
+                <input type='text' id='email' value={email} onInput={(e) => setEmail(e.target.value)}/>
                 <h3>Phone Number:</h3>
-                <input type='number' id='phone' value={phone} required onInput={(e) => setPhone(e.target.value)}/>
+                <input type='number' id='phone' value={phone} onInput={(e) => setPhone(e.target.value)}/>
                 <h3>Date of Birth:</h3>
-                <input type='date' id='dob' value={dob} required onInput={(e) => setDob(e.target.value)}/>
+                <input type='date' id='dob' value={dob} onInput={(e) => setDob(e.target.value)}/>
                 <button type='submit' className='submit-button'>Submit</button>
               </form>          
             </Box>
