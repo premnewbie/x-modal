@@ -32,11 +32,11 @@ export default function ModalForm() {
     const phoneFormat = /^\d{10}$/;
 
     if (!emailFormat.test(email)) {
-      alert("Invalid email. Please check your email address.");
+      alert("Invalid email");
     } else if (!phoneFormat.test(phone)) {
-      alert("Invalid phone number. Please enter a 10-digit phone number.");
+      alert("Invalid phone number");
     } else if (new Date(dob) > currentDate || dob==='') {
-      alert("Invalid date of birth. Please enter a valid date.");
+      alert("Invalid date of birth");
     } else{
       setUsername('');
       setEmail('');
