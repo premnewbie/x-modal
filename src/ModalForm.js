@@ -63,11 +63,11 @@ export default function ModalForm() {
                 <h3>Username:</h3>
                 <input type='text' id='username' value={username} onInput={(e) => setUsername(e.target.value)}/>
                 <h3>Email Address:</h3>
-                <input type='text' id='email' value={email} onInput={(e) => setEmail(e.target.value)}/>
+                <input type='email' id='email' value={email} required onInput={(e) => setEmail(e.target.value)}/>
                 <h3>Phone Number:</h3>
-                <input type='number' id='phone' value={phone} onInput={(e) => setPhone(e.target.value)}/>
+                <input type='number' id='phone' value={phone} required onInput={(e) => setPhone(e.target.value)}/>
                 <h3>Date of Birth:</h3>
-                <input type='date' id='dob' value={dob}   onInput={(e) => setDob(e.target.value)}/>
+                <input type='date' id='dob' value={dob} required onInput={(e) => setDob(e.target.value)}/>
                 <button type='submit' className='submit-button'>Submit</button>
               </form>          
             </Box>
